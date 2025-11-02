@@ -1,0 +1,259 @@
+/* Reset Bootstrap conflicts */
+body {
+    font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Dark Mode (default) */
+body.dark-mode {
+    background: #000 !important;
+    color: #fff !important;
+}
+body.dark-mode .sidebar, body.dark-mode .card, body.dark-mode .modal-content {
+    background: #15202b !important;
+    border-color: #333 !important;
+}
+body.dark-mode .nav-link, body.dark-mode .card-body, body.dark-mode .form-control {
+    color: #fff !important;
+}
+body.dark-mode .nav-link:hover {
+    background: #1da1f2 !important;
+    color: #fff !important;
+}
+body.dark-mode .form-control {
+    background: #1c2938 !important;
+    border-color: #333 !important;
+}
+
+/* Light Mode */
+body.light-mode {
+    background: #fff !important;
+    color: #000 !important;
+}
+body.light-mode .sidebar, body.light-mode .card, body.light-mode .modal-content {
+    background: #f5f5f5 !important;
+    border-color: #ddd !important;
+}
+/* Improve light mode contrast */
+body.light-mode .card {
+    background: #fff !important; /* cards on pure white for readability */
+    border-color: #ddd !important;
+}
+body.light-mode .left-sidebar .logo h3 {
+    color: #000 !important; /* sidebar title visible on light bg */
+}
+body.light-mode .post-header .timestamp {
+    color: #6c757d !important; /* ensure readable muted text */
+}
+body.light-mode .nav-link, body.light-mode .card-body, body.light-mode .form-control {
+    color: #111 !important;
+}
+body.light-mode .nav-link:hover {
+    background: #0d8bd9 !important;
+    color: #fff !important;
+}
+body.light-mode .form-control {
+    background: #fff !important;
+    border-color: #bbb !important;
+}
+body.light-mode .badge.bg-secondary { background-color: #6c757d !important; color: #fff !important; }
+body.light-mode .btn-outline-secondary { color: #495057 !important; border-color: #6c757d !important; }
+body.light-mode .btn-outline-secondary:hover { background-color: #6c757d !important; color: #fff !important; }
+body.light-mode .text-muted { color: #6c757d !important; }
+
+/* Left Sidebar (X-like) */
+.left-sidebar {
+    width: 280px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding-top: 12px;
+    border-right: 1px solid rgba(255,255,255,0.06);
+    z-index: 1000;
+}
+.left-sidebar .logo h3 {
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+.left-sidebar .logo .logo-img {
+    height: 16px; /* smaller logo height */
+    width: auto;
+    border-radius: 1px;
+    object-fit: contain;
+}
+.left-sidebar .nav-link {
+    font-size: 20px;
+    font-weight: 600;
+    padding: 12px 20px;
+    border-radius: 30px;
+    transition: background 0.2s;
+    display: inline-flex;
+    align-items: center;
+}
+.left-sidebar .nav-link i {
+    font-size: 24px;
+}
+.left-sidebar .nav-link.active {
+    font-weight: 800;
+}
+.left-sidebar .post-button {
+    font-size: 20px;
+    font-weight: 600;
+    padding: 12px 20px;
+    border-radius: 30px;
+}
+.left-sidebar .profile-pic {
+    width: 48px;
+    height: 48px;
+}
+.profile-menu {
+    z-index: 1000;
+    width: 200px;
+}
+.profile-menu a { text-decoration: none; }
+
+/* Right Sidebar */
+.right-sidebar {
+    width: 250px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    border-left: 1px solid rgba(255,255,255,0.06);
+    overflow-y: auto;
+}
+.trending-section li {
+    font-size: 14px;
+}
+
+/* Feed */
+.feed {
+    max-width: 600px;
+    margin-left: 290px;
+    margin-right: 260px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Ensure posts don't interfere with modals */
+.post.card {
+    position: relative;
+    z-index: 1;
+}
+
+/* Compact spacing adjustments */
+.left-sidebar.sidebar { padding: 16px; }
+.left-sidebar .logo { margin-bottom: 8px; }
+.left-sidebar .nav.gap-3 { gap: .5rem !important; }
+.feed header { margin-bottom: .75rem; }
+.post.card { margin-bottom: .75rem; }
+.post .card-body { padding: .75rem; }
+.post .card-title { margin-top: .5rem; margin-bottom: .25rem; }
+.post .card-text { margin-bottom: .5rem; }
+.post .post-actions { gap: .5rem; margin-top: .5rem; }
+.comments-list { margin-top: .5rem; }
+.comment .card { margin-bottom: .5rem; }
+.comment .card-body { padding: .5rem; }
+.comment-form { margin-top: .5rem; }
+.right-sidebar .live-section { margin-bottom: 1rem; }
+.trending-section li { margin-bottom: .25rem; }
+.post-header .timestamp {
+    font-size: 12px;
+}
+.post video, .post img:not(.profile-pic) {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+.post .profile-pic {
+    width: 32px;
+    height: 32px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+.post-actions .btn i {
+    margin-right: 5px;
+}
+.comment .profile-pic {
+    width: 32px;
+    height: 32px;
+}
+.x-post {
+    border: 1px solid #333;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+/* Dashboard visual polish */
+.post.card { border-radius: 12px; }
+.post .status.badge { text-transform: capitalize; }
+.post .username { font-weight: 600; }
+
+/* Modal z-index fix - Force modal to top */
+.modal { 
+    z-index: 999999 !important; 
+    position: fixed !important;
+}
+.modal-backdrop { 
+    z-index: 999998 !important; 
+}
+.modal-dialog { 
+    z-index: 1000000 !important; 
+    position: relative !important;
+}
+.modal-content { 
+    z-index: 1000001 !important; 
+    position: relative !important;
+}
+
+/* Post Modal */
+#postModal .modal-content {
+    border-radius: 15px;
+}
+#postModal .modal-dialog {
+    max-width: 500px;
+}
+#postModal .form-control {
+    border-radius: 10px;
+}
+#postModal textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+#emoji-btn, #gif-btn {
+    font-size: 14px;
+}
+.cursor-pointer {
+    cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .left-sidebar, .right-sidebar {
+        display: none;
+    }
+    .feed {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+
+/* Auth split layout */
+.auth-split .auth-left { background: rgba(0,0,0,0); }
+.auth-split .auth-right { position: relative; }
+.auth-split .auth-right .auth-art {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, #6a11cb 0%, #2575fc 100%);
+    background-image: linear-gradient(180deg, rgba(0,0,0,.0), rgba(0,0,0,.0)), url('assets/background.jpg');
+    background-position: center; background-size: cover; background-repeat: no-repeat;
+}
+.auth-form .form-label { margin-bottom: .25rem; }
+.auth-form .form-control { border-radius: 8px; }
+.auth-form .btn-primary { border-radius: 8px; }
